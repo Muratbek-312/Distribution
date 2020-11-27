@@ -25,8 +25,8 @@
                     {% endfor %}
                   </div>
                   <div>
-                    <a href="">Update</a>
-                    <a href="">Delete</a>
+                    <a href="{% url 'post-update' id=post.id %}">Обновить</a>
+                    <a href="{% url 'post-delete' id=post.id %}">Удалить</a>
                   </div>
 
                 </div>
@@ -101,7 +101,8 @@
                       </div>
                     </div>
                   </form>
-                </div>
+                {% else %}
+                  <a href="{% url 'account_login' %}" class="btn btn-primary">Войдите в систему, чтобы прокомментировать</a>
                 {% endif %}
               </div>
             </div>
